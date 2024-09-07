@@ -8,6 +8,8 @@ const cors = require("cors");
 const { default: mongoose } = require("mongoose");
 const liveScore_Route = require("./Api/Routes/liveScore");
 const matches_Route = require("./Api/Routes/matches");
+const pointTable_Route = require("./Api/Routes/pointTable");
+
 
 
 const db =
@@ -26,6 +28,7 @@ mongoose
   app.use(body_parser.urlencoded({ extended: true }));
   app.use('/livescore', liveScore_Route);
   app.use("/matches", matches_Route);
+  app.use("/pointTable", pointTable_Route);
 
 
 module.exports = app;
